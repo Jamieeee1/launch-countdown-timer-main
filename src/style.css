@@ -1,0 +1,134 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Primary */
+  --Grayish-blue: hsl(237, 18%, 59%);
+  --Soft-red: hsl(345, 95%, 68%);
+  /* Neutral */
+  --White: hsl(0, 0%, 100%);
+  --Dark-desaturated-blue: hsl(236, 21%, 26%);
+  --Very-dark-blue: hsl(235, 16%, 14%);
+  --Very-dark-dark-blue: hsl(234, 17%, 12%);
+}
+
+* {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6.5fr 3.5fr;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--Very-dark-blue);
+  color: var(--White);
+}
+
+#body-div,
+footer {
+  position: relative;
+}
+
+#body-div {
+  background-image: url("/images/bg-stars.svg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.times-div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1.5em;
+  max-height: max-content;
+}
+
+.indiv-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner-div {
+  background-color: var(--Very-dark-dark-blue);
+  max-height: max-content;
+  border-radius: 0.4em;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.inner-back {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.1rem;
+}
+
+.lowwer {
+  background-color: rgb(52, 54, 79);
+}
+
+.upper {
+  background-color: rgba(52, 54, 80, 0.5);
+}
+
+.number-span {
+  font-size: 80px;
+  font-weight: bold;
+  padding-inline: 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(251, 96, 135, 0.8) 0%,
+    rgba(251, 96, 135, 0.8) 49.5%,
+    var(--Very-dark-dark-blue) 49.5%,
+    var(--Very-dark-dark-blue) 50.5%,
+    #fb6087 50.5%,
+    #fb6087 100%
+  );
+  z-index: 5;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#backgroundimg {
+  position: absolute;
+  bottom: 0;
+  z-index: -3;
+}
+
+footer .socials {
+  display: flex;
+  gap: 1em;
+}
+
+.socials svg {
+  transition: fill 0.3s;
+}
+
+footer .socials a:hover path {
+  fill: var(--Soft-red);
+}
