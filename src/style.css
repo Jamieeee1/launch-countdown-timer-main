@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,700;1,700&display=swap");
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -30,6 +32,8 @@ body {
   min-height: 100vh;
   background-color: var(--Very-dark-blue);
   color: var(--White);
+
+  font-family: "Red Hat Text", sans-serif;
 }
 
 #body-div,
@@ -50,7 +54,8 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  gap: 1.5em;
+  gap: 0.5em;
+  padding-inline: 0.5rem;
   max-height: max-content;
 }
 
@@ -62,11 +67,20 @@ footer {
 
 .inner-div {
   background-color: var(--Very-dark-dark-blue);
-  max-height: max-content;
   border-radius: 0.4em;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
+
+  width: 10rem;
+  height: 7.5rem;
+  min-width: 10rem;
+  min-height: 7.5rem;
+  max-width: 10rem;
+  max-height: 7.5rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .inner-back {
@@ -89,9 +103,9 @@ footer {
 }
 
 .number-span {
-  font-size: 80px;
+  font-size: 4rem;
   font-weight: bold;
-  padding-inline: 2rem;
+  padding-inline: 0;
   background: linear-gradient(
     to bottom,
     rgba(251, 96, 135, 0.8) 0%,
@@ -131,4 +145,25 @@ footer .socials {
 
 footer .socials a:hover path {
   fill: var(--Soft-red);
+}
+
+@media (max-width: 600px) {
+  .inner-div {
+    width: 6.5rem;
+    height: 5rem;
+    min-width: 6.5rem;
+    min-height: 5rem;
+    max-width: 6.5rem;
+    max-height: 5rem;
+  }
+  .number-span {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 680px) {
+  .times-div {
+    gap: 1em;
+    padding-inline: 0;
+  }
 }
