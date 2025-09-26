@@ -3,10 +3,15 @@ const hourSpan = document.querySelector(".hour");
 const minuteSpan = document.querySelector(".minute");
 const secondSpan = document.querySelector(".seconds");
 
-const dayDiv = daySpan.closest(".inner-div");
-const hourDiv = hourSpan.closest(".inner-div");
-const minuteDiv = minuteSpan.closest(".inner-div");
-const secondDiv = secondSpan.closest(".inner-div");
+// const dayDiv = daySpan.closest(".inner-div");
+// const hourDiv = hourSpan.closest(".inner-div");
+// const minuteDiv = minuteSpan.closest(".inner-div");
+// const secondDiv = secondSpan.closest(".inner-div");
+
+const dayDiv = document.querySelector(".lowday");
+const hourDiv = document.querySelector(".lowhour");
+const minuteDiv = document.querySelector(".lowminute");
+const secondDiv = document.querySelector(".lowsecond");
 
 let days = 14;
 let hour = 0;
