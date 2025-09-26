@@ -3,43 +3,65 @@ const hourSpan = document.querySelector(".hour");
 const minuteSpan = document.querySelector(".minute");
 const secondSpan = document.querySelector(".seconds");
 
+// const dayDiv = daySpan.closest(".inner-div");
+// const hourDiv = hourSpan.closest(".inner-div");
+// const minuteDiv = minuteSpan.closest(".inner-div");
+// const secondDiv = secondSpan.closest(".inner-div");
+
+const dayDiv = document.querySelector(".lowday");
+const hourDiv = document.querySelector(".lowhour");
+const minuteDiv = document.querySelector(".lowminute");
+const secondDiv = document.querySelector(".lowsecond");
+
 let days = 14;
 let hour = 0;
 let minute = 0;
 let second = 0;
 
+function flipCard(div) {
+  div.classList.remove("flip"); // reset if already animating
+  void div.offsetWidth; // force reflow
+  div.classList.add("flip");
+  setTimeout(() => div.classList.remove("flip"), 600);
+}
+
 const timer = setInterval(() => {
+  const prev = { days, hour, minute, second };
+  countDown();
+
+  // Flip only if value changed
+  if (days !== prev.days) flipCard(dayDiv);
+  if (hour !== prev.hour) flipCard(hourDiv);
+  if (minute !== prev.minute) flipCard(minuteDiv);
+  if (second !== prev.second) flipCard(secondDiv);
+
   secondSpan.innerHTML = second;
   minuteSpan.innerHTML = minute;
   hourSpan.innerHTML = hour;
   daySpan.innerHTML = days;
-  countDown();
 }, 1000);
 
 const countDown = () => {
   if (second === 0 && (minute || hour || days)) {
     second = 59;
-    secondSpan.innerHTML = second;
+
     if (minute === 0 && (hour || days)) {
       minute = 59;
-      minuteSpan.innerHTML = minute;
+
       if (hour === 0 && days) {
         hour = 23;
-        hourSpan.innerHTML = hour;
+
         if (days >= 1) {
           days -= 1;
-          daySpan.innerHTML = days;
         }
       } else {
         if (hour >= 1) {
           hour -= 1;
-          hourSpan.innerHTML = hour;
         }
       }
     } else {
       if (minute >= 1) {
         minute -= 1;
-        minuteSpan.innerHTML = minute;
       }
     }
   } else {
@@ -47,7 +69,6 @@ const countDown = () => {
       clearInterval(timer);
     } else {
       second -= 1;
-      secondSpan.innerHTML = second;
     }
   }
 };
