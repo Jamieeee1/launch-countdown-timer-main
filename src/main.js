@@ -8,15 +8,27 @@ const secondSpan = document.querySelector(".seconds");
 // const minuteDiv = minuteSpan.closest(".inner-div");
 // const secondDiv = secondSpan.closest(".inner-div");
 
-const dayDiv = document.querySelector(".lowday");
-const hourDiv = document.querySelector(".lowhour");
-const minuteDiv = document.querySelector(".lowminute");
-const secondDiv = document.querySelector(".lowsecond");
+// const dayDiv = document.querySelector(".lowday");
+// const hourDiv = document.querySelector(".lowhour");
+// const minuteDiv = document.querySelector(".lowminute");
+// const secondDiv = document.querySelector(".lowsecond");
+
+const dayDiv = document.querySelector(".upday");
+const hourDiv = document.querySelector(".uphour");
+const minuteDiv = document.querySelector(".upminute");
+const secondDiv = document.querySelector(".upsecond");
 
 let days = 14;
 let hour = 0;
 let minute = 0;
 let second = 0;
+
+document.addEventListener("DOMContentLoaded", () => {
+  secondSpan.innerHTML = second;
+  minuteSpan.innerHTML = minute;
+  hourSpan.innerHTML = hour;
+  daySpan.innerHTML = days;
+});
 
 function flipCard(div) {
   div.classList.remove("flip"); // reset if already animating
