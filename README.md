@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [solution URL here](https://www.frontendmentor.io/solutions/javascript-animation-BIBHdGOnG8)
 - Live Site URL: [live site URL here](https://launch-countdown-timer-main-pied.vercel.app/)
 
 ## My process
